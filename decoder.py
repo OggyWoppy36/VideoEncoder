@@ -15,12 +15,11 @@ def decode_file():
     )
 
     p = Path(video_path)
-
     if not video_path:
         print("No video selected")
         return
-    elif p.suffix is not ".avi":
-        print("Incorrect file type selected. Please select a '.avi' file")
+    elif p.suffix != ".avi":
+        print(f"Incorrect file type selected ({p.suffix}). Please select a '.avi' file")
         return
 
 
@@ -39,7 +38,7 @@ def decode_file():
         byte_arr.extend(frame.tobytes())
 
     cap.release()
-    name = (p.name).split("-")[-1][:-4]
+    name = (p.name)[len("Encoded-video-"):-4]
     print(name)
     out_path = filedialog.asksaveasfilename(
         title="Save decoded file as:",
