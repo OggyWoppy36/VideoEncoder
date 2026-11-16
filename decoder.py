@@ -39,7 +39,7 @@ def decode_file():
 
     cap.release()
     name = (p.name)[len("Encoded-video-"):-4]
-    print(name)
+    suffix = name[:4]
     out_path = filedialog.asksaveasfilename(
         title="Save decoded file as:",
         initialfile=f"Decoded-{name}",
