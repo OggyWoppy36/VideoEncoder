@@ -40,11 +40,11 @@ def decode_file():
 
     cap.release()
     name = (p.name).split("-")[-1][:-4]
-    print(name)
+    suffix = name[:-4] if name[-4] == '.' else ".txt"
     out_path = filedialog.asksaveasfilename(
         title="Save decoded file as:",
         initialfile=f"Decoded-{name}",
-        defaultextension=name[:-4]
+        defaultextension=suffix
     )
 
     with open(out_path, "wb") as f:
