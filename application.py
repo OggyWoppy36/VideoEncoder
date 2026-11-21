@@ -19,15 +19,6 @@ root.configure(bg=bgcol)
 txtcol = "#64ABF0"
 imgcol = "#38D1FB"
 
-# title_text = tk.Label(
-#     root,
-#     text="Video Encoder & Decoder",
-#     font=("Arial", 24, "bold"),
-#     bg=bgcol,
-#     fg=txtcol
-# )
-# title_text.pack(pady=20)
-
 columns_frame = tk.Frame(root, bg=bgcol)
 columns_frame.pack(fill="x", padx=30, expand=True)
 

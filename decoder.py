@@ -1,12 +1,7 @@
-from pathlib import Path
-
 import cv2
-import tkinter as tk
+from pathlib import Path
 from tkinter import filedialog
 
-
-# root = tk.Tk()
-# root.withdraw()
 
 def decode_file():
     video_path = filedialog.askopenfilename(
