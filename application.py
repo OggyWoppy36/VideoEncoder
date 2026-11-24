@@ -1,6 +1,16 @@
 import tkinter as tk
 from encoder import encode_file
 from decoder import decode_file
+import os.path as path
+import sys
+
+def res_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = path.abspath(".")
+    return path.join(base_path, relative_path)
+
 
 root = tk.Tk()
 root.title("Video Encoder & Decoder")
@@ -25,7 +35,7 @@ columns_frame.pack(fill="x", padx=30, expand=True)
 encode_frame = tk.Frame(columns_frame, bg=bgcol)
 encode_frame.pack(side="left")
 
-encode_img = tk.PhotoImage(file="icon-encode.png")
+encode_img = tk.PhotoImage(file=res_path("icon-encode.png"))
 button_encode = tk.Button(
     encode_frame,
     image=encode_img,
@@ -51,7 +61,7 @@ encode_label.pack(pady=10)
 decode_frame = tk.Frame(columns_frame, bg=bgcol)
 decode_frame.pack(side="right")
 
-decode_img = tk.PhotoImage(file="icon-decode.png")
+decode_img = tk.PhotoImage(file=res_path("icon-decode.png"))
 button_decode = tk.Button(
     decode_frame,
     image=decode_img,
