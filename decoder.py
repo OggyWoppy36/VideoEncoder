@@ -20,10 +20,6 @@ def decode_file():
 
     cap = cv2.VideoCapture(video_path)
 
-    width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-    height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    frame_ct = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-
     byte_arr = bytearray()
     while cap.isOpened():
         ret, frame = cap.read()
